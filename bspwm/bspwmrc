@@ -53,6 +53,11 @@ killall -q nm-applet
 while pgrep -u $UID -x nm-applet > /dev/null; do sleep 1; done
 nm-applet &
 
+#dunst
+killall -q dunst
+while pgrep -u $UID -x dunst > /dev/null; do sleep 1; done
+dunst &
+
 #Gonme Authenticatio
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
