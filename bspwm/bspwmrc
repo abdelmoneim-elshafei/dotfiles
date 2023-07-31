@@ -75,8 +75,9 @@ picom --config ~/.config/picom/picom.conf &
 . SetSysVars
 
 #wallpaper
-feh -z --no-fehbg --bg-fill ~/Wallpaper
-
+#feh -z --no-fehbg --bg-fill ~/Wallpaper
+#nohup change_background.sh &
+bash change_background.sh &
 
 #  ┌┐ ┌─┐┌─┐┬ ┬┌┬┐  ┌─┐┌─┐┌┐┌┌─┐┬┌─┐
 #  ├┴┐└─┐├─┘││││││  │  │ ││││├┤ ││ ┬
