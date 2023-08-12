@@ -58,6 +58,10 @@ killall -q dunst
 while pgrep -u $UID -x dunst > /dev/null; do sleep 1; done
 dunst &
 
+killall -q mpd
+while pgrep -u $UID -x mpd> /dev/null; do sleep 1; done
+exec mpd &
+
 #Gonme Authenticatio
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
@@ -111,6 +115,7 @@ bspc rule -a "Crow Translate" state=floating follow=off
 bspc rule -a Kupfer.py focus=on
 bspc rule -a Cerebro focus=on state=floating follow=off
 bspc rule -a Screenkey manage=off
+bspc rule -a vlc desktop='^5'
 bspc rule -a Nm-connection-editor state=floating follow=off
 
 bspc config single_monocle                 true 
