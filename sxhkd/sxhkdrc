@@ -6,19 +6,25 @@
 super + Return
 		alacritty
 
-ctrl + alt + {b,n,i,c,t,w,m,v,k}
-	{microsoft-edge-dev, \
+ctrl + alt + {b,n,i,c,t,m,l,v,k}
+	{firefox, \
 	 thunar, \
 	 ~/./idea.sh, \
 	 code, \
+	 /home/abdelmoneim/.config/rofi/applets/bin/./screenshot.sh, \
+	 /home/abdelmoneim/.config/rofi/applets/bin/./mpd.sh, \
+	 /home/abdelmoneim/.config/sxhkd/./language_switcher.sh #\
 	 }
 # program launcher
+#super + @space
+#	rofi -show drun -theme /home/abdelmoneim/.config/bspwm/rofi/launcher.rasi
+
 super + @space
-	rofi -show run	
+	~/./launcher.sh
 
 # make sxhkd reload its configuration files:
-super + Escape
-	pkill -USR1 -x sxhkd
+#super + Escape
+#	pkill -USR1 -x sxhkd
 
 # Power off, Reboot, Log out, Lockscreen, kill an app
 ctrl + super + alt + {p,r,q,l,k}

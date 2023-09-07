@@ -30,7 +30,7 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 pgrep -x sxhkd > /dev/null || sxhkd &
 
 #keyboard layout
-setxkbmap -option grp:alt_shift_toggle us,ara &
+#setxkbmap -option grp:alt_shift_toggle us,ara &
 
 #Polybar
 killall -q polybar
@@ -68,8 +68,14 @@ exec mpd &
 #tocuhpad
 ~/.config/bspwm/tap.sh &
 
+#kill loops in external screen auto config and change background config
+
+nohup ~/.config/bspwm/./killloops.sh > /dev/null 2>&1 &
+
 #external sreen if found
+
 ~/.config/bspwm/externalscreen.sh &
+nohup ~/.config/bspwm/./externalscreenauto.sh > /dev/null 2>&1 &
 
 #Picom
 picom --config ~/.config/picom/picom.conf &
@@ -87,12 +93,14 @@ bash change_background.sh &
 #  ├┴┐└─┐├─┘││││││  │  │ ││││├┤ ││ ┬
 #  └─┘└─┘┴  └┴┘┴ ┴  └─┘└─┘┘└┘└  ┴└─┘
 #         
-bspc monitor eDP-1 -d "1:" "2:" "3:" "4:" "5:" "6:" "7:"
+
+#bspc monitor -d "1:" "2:" "3:" "4:" "5:" "6:" "7:" "8:"
+bspc monitor eDP-1 -d "1:" "2:" "3:" "4:" "5:" "6:" "7:" "8:"
 bspc monitor HDMI-1-0 -d 
 #bspc monitor -d TERM WWW DEV FILE DOC 
 #bspc monitor -d I II III IV V VI
 
-bspc config border_width         1
+bspc config border_width         2
 #bspc config active_border_color #f7f23f
 #bspc config normal_border_color #D23D3D
 
@@ -104,25 +112,31 @@ bspc config focused_border_color "#f7f23f"
 
 
 bspc config window_gap          12
-bspc config split_ratio          0.52
+bspc config split_ratio          0.5
 #bspc config borderless_monocle   true
 #bspc config gapless_monocle      true
 
 bspc rule -a Gimp desktop='^8' state=floating follow=on
 bspc rule -a Microsoft-edge-dev desktop='^2'
+bspc rule -a firefox desktop='^2'
 bspc rule -a mplayer2 state=floating
 bspc rule -a "Crow Translate" state=floating follow=off
 bspc rule -a Kupfer.py focus=on
 bspc rule -a Cerebro focus=on state=floating follow=off
+bspc rule -a Java focus=on state=floating follow=off
 bspc rule -a Screenkey manage=off
 bspc rule -a vlc desktop='^5'
 bspc rule -a Nm-connection-editor state=floating follow=off
+bspc rule -a copyq state=floating follow=off
 
 bspc config single_monocle                 true 
 bspc config borderless_monocle            false
 bspc config gapless_monocle               false
 
-#bspc config focus_follows_pointer         true
+
+bspj config remove_disabled_monitor        true
+#bspc config focus_follows_pointer          true
+#bspc config focus_follows_pointer         false
 #bspc config pointer_follows_focus         false
 bspc config pointer_motion_interval       5
 bspc config pointer_modifier              mod4 

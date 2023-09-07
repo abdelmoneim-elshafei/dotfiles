@@ -4,7 +4,7 @@
 WALLPAPER_DIR="/home/abdelmoneim/Wallpaper"
 
 # Time interval in seconds (300 seconds = 5 minutes)
-INTERVAL="300"
+INTERVAL="301"
 
 while true; do
   # Select a random jpg file from the wallpaper directory
