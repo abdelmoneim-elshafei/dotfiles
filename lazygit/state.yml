@@ -1,0 +1,10 @@
+lastupdatecheck: 0
+recentrepos:
+- /home/abdelmoneim/.config
+- /home/abdelmoneim/.config/nvim
+startuppopupversion: 5
+customcommandshistory:
+- git pull
+- pull
+hidecommandlog: false
+ignorewhitespaceindiffview: false

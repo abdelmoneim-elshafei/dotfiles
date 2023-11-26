@@ -75,7 +75,7 @@ nohup ~/.config/bspwm/./killloops.sh > /dev/null 2>&1 &
 #external sreen if found
 
 ~/.config/bspwm/externalscreen.sh &
-nohup ~/.config/bspwm/./externalscreenauto.sh > /dev/null 2>&1 &
+#nohup ~/.config/bspwm/./externalscreenauto.sh > /dev/null 2>&1 &
 
 #Picom
 picom --config ~/.config/picom/picom.conf &
@@ -88,8 +88,7 @@ picom --config ~/.config/picom/picom.conf &
 #feh -z --no-fehbg --bg-fill ~/Wallpaper
 #nohup change_background.sh &
 bash change_background.sh &
-
-#  ┌┐ ┌─┐┌─┐┬ ┬┌┬┐  ┌─┐┌─┐┌┐┌┌─┐┬┌─┐
+setxkbmap -option "caps:swapescape"
 #  ├┴┐└─┐├─┘││││││  │  │ ││││├┤ ││ ┬
 #  └─┘└─┘┴  └┴┘┴ ┴  └─┘└─┘┘└┘└  ┴└─┘
 #         
@@ -120,14 +119,15 @@ bspc rule -a Gimp desktop='^8' state=floating follow=on
 bspc rule -a Microsoft-edge-dev desktop='^2'
 bspc rule -a firefox desktop='^2'
 bspc rule -a mplayer2 state=floating
-bspc rule -a "Crow Translate" state=floating follow=off
+bspc rule -a crow-translate state=floating follow=off
 bspc rule -a Kupfer.py focus=on
 bspc rule -a Cerebro focus=on state=floating follow=off
 bspc rule -a Java focus=on state=floating follow=off
 bspc rule -a Screenkey manage=off
 bspc rule -a vlc desktop='^5'
 bspc rule -a Nm-connection-editor state=floating follow=off
-bspc rule -a copyq state=floating follow=off
+bspc rule -a copyq  state=floating follow=off
+bspc rule -a pomatez state=floating focus=on follow=off
 
 bspc config single_monocle                 true 
 bspc config borderless_monocle            false

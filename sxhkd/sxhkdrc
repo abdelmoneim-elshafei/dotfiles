@@ -4,16 +4,18 @@
 
 # terminal emulator
 super + Return
-		alacritty
+		kitty
+#		alacritty
 
-ctrl + alt + {b,n,i,c,t,m,l,v,k}
+ctrl + alt + {b,n,i,c,t,m,l,d,k}
 	{firefox, \
 	 thunar, \
 	 ~/./idea.sh, \
 	 code, \
 	 /home/abdelmoneim/.config/rofi/applets/bin/./screenshot.sh, \
 	 /home/abdelmoneim/.config/rofi/applets/bin/./mpd.sh, \
-	 /home/abdelmoneim/.config/sxhkd/./language_switcher.sh #\
+	 /home/abdelmoneim/.config/sxhkd/./language_switcher.sh, \
+	 /home/abdelmoneim/.config/bspwm/./externalscreenauto.sh #\
 	 }
 # program launcher
 #super + @space
@@ -23,7 +25,8 @@ super + @space
 	~/./launcher.sh
 
 # make sxhkd reload its configuration files:
-#super + Escape
+super + Escape
+	kill -USR1 $(pidof sxhkd)
 #	pkill -USR1 -x sxhkd
 
 # Power off, Reboot, Log out, Lockscreen, kill an app
@@ -60,7 +63,6 @@ super + y
 super + g
 	bspc node -s biggest.window
 
-#
 # state/flags
 #
 
@@ -107,10 +109,12 @@ super + {_,shift + }{1-9,0}
 	bspc {desktop -f,node -d} '^{1-9,10}'
 
 #Brightness
+
 XF86MonBrightness{Up,Down}  
   	brightnessctl s 100{+,-}  
 
 #volume
+
 XF86Audio{Raise,Lower}Volume  
     pulsemixer --change-volume {+,-}10  
  

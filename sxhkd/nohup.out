@@ -1,0 +1,44 @@
+Could not grab key 60 with modfield 64: the combination is already grabbed.
+Could not grab key 60 with modfield 80: the combination is already grabbed.
+Could not grab key 60 with modfield 66: the combination is already grabbed.
+Could not grab key 60 with modfield 82: the combination is already grabbed.
+
+(thunar:31205): GLib-GIO-CRITICAL **: 20:33:59.602: GFileInfo created without standard::size
+
+(thunar:31205): GLib-GIO-CRITICAL **: 20:33:59.602: file ../glib/gio/gfileinfo.c: line 1846 (g_file_info_get_size): should not be reached
+
+(thunar:31205): GLib-GIO-CRITICAL **: 20:33:59.604: GFileInfo created without standard::is-hidden
+
+(thunar:31205): GLib-GIO-CRITICAL **: 20:33:59.604: file ../glib/gio/gfileinfo.c: line 1633 (g_file_info_get_is_hidden): should not be reached
+
+(thunar:31205): GLib-GIO-CRITICAL **: 20:33:59.604: GFileInfo created without standard::is-backup
+
+(thunar:31205): GLib-GIO-CRITICAL **: 20:33:59.604: file ../glib/gio/gfileinfo.c: line 1655 (g_file_info_get_is_backup): should not be reached
+
+(thunar:31205): GLib-GIO-CRITICAL **: 20:33:59.604: GFileInfo created without standard::is-symlink
+
+(thunar:31205): GLib-GIO-CRITICAL **: 20:33:59.604: file ../glib/gio/gfileinfo.c: line 1677 (g_file_info_get_is_symlink): should not be reached
+
+(thunar:31205): GLib-GIO-CRITICAL **: 20:35:44.236: GFileInfo created without standard::is-hidden
+
+(thunar:31205): GLib-GIO-CRITICAL **: 20:35:44.236: file ../glib/gio/gfileinfo.c: line 1633 (g_file_info_get_is_hidden): should not be reached
+
+(thunar:31205): GLib-GIO-CRITICAL **: 20:35:44.236: GFileInfo created without standard::is-backup
+
+(thunar:31205): GLib-GIO-CRITICAL **: 20:35:44.236: file ../glib/gio/gfileinfo.c: line 1655 (g_file_info_get_is_backup): should not be reached
+
+(thunar:31205): GLib-GIO-CRITICAL **: 20:35:44.236: GFileInfo created without standard::is-symlink
+
+(thunar:31205): GLib-GIO-CRITICAL **: 20:35:44.236: file ../glib/gio/gfileinfo.c: line 1677 (g_file_info_get_is_symlink): should not be reached
+
+(thunar:31205): GLib-GIO-CRITICAL **: 20:37:28.145: GFileInfo created without standard::is-hidden
+
+(thunar:31205): GLib-GIO-CRITICAL **: 20:37:28.145: file ../glib/gio/gfileinfo.c: line 1633 (g_file_info_get_is_hidden): should not be reached
+
+(thunar:31205): GLib-GIO-CRITICAL **: 20:37:28.146: GFileInfo created without standard::is-backup
+
+(thunar:31205): GLib-GIO-CRITICAL **: 20:37:28.146: file ../glib/gio/gfileinfo.c: line 1655 (g_file_info_get_is_backup): should not be reached
+
+(thunar:31205): GLib-GIO-CRITICAL **: 20:37:28.146: GFileInfo created without standard::is-symlink
+
+(thunar:31205): GLib-GIO-CRITICAL **: 20:37:28.146: file ../glib/gio/gfileinfo.c: line 1677 (g_file_info_get_is_symlink): should not be reached
