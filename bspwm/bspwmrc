@@ -89,13 +89,21 @@ picom --config ~/.config/picom/picom.conf &
 #nohup change_background.sh &
 bash change_background.sh &
 setxkbmap -option "caps:swapescape"
+
 #  ├┴┐└─┐├─┘││││││  │  │ ││││├┤ ││ ┬
 #  └─┘└─┘┴  └┴┘┴ ┴  └─┘└─┘┘└┘└  ┴└─┘
+#
 #         
 
 #bspc monitor -d "1:" "2:" "3:" "4:" "5:" "6:" "7:" "8:"
-bspc monitor eDP-1 -d "1:" "2:" "3:" "4:" "5:" "6:" "7:" "8:"
+#bspc monitor eDP-1 -d "1:" "2:" "3:" "4:" "5:" "6:" "7:" "8:"
+#bspc monitor HDMI-1-0 -d 
+bspc monitor eDP-1 -d "1:" "2: " "3:" "4:" "5: " "6:" "7:" "8:"
 bspc monitor HDMI-1-0 -d 
+
+#bspc monitor eDP-1 -d "1:000" "2:001" "3:010" "4:011" "5:100" "6:101" "7:110" "8:111"
+bspc monitor HDMI-1-0 -d 
+
 #bspc monitor -d TERM WWW DEV FILE DOC 
 #bspc monitor -d I II III IV V VI
 
@@ -128,6 +136,7 @@ bspc rule -a vlc desktop='^5'
 bspc rule -a Nm-connection-editor state=floating follow=off
 bspc rule -a copyq  state=floating follow=off
 bspc rule -a pomatez state=floating focus=on follow=off
+bspc rule -a xdman-Main state=floating focus=on follow=off
 
 bspc config single_monocle                 true 
 bspc config borderless_monocle            false

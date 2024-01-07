@@ -1,0 +1,59 @@
+live_config_reload = true
+theme = "Eighties.dark"
+
+[colors]
+author = "Chris Kempson"
+name = "Eighties (dark)"
+
+[colors.bright]
+black = "#747369"
+blue = "#6699cc"
+cyan = "#66cccc"
+green = "#99cc99"
+magenta = "#cc99cc"
+red = "#f2777a"
+white = "#f2f0ec"
+yellow = "#ffcc66"
+
+[colors.cursor]
+cursor = "#d3d0c8"
+text = "#2d2d2d"
+
+[colors.normal]
+black = "#2d2d2d"
+blue = "#6699cc"
+cyan = "#66cccc"
+green = "#99cc99"
+magenta = "#cc99cc"
+red = "#f2777a"
+white = "#d3d0c8"
+yellow = "#ffcc66"
+
+[colors.primary]
+background = "#2d2d2d"
+foreground = "#d3d0c8"
+
+[cursor]
+blink_interval = 550
+unfocused_hollow = false
+
+[cursor.style]
+blinking = "On"
+shape = "Block"
+
+[font]
+size = 12
+
+[selection]
+save_to_clipboard = false
+
+[window]
+decorations = "none"
+dynamic_title = true
+history = 10000
+multiplier = 3
+opacity = 1.0
+
+[window.padding]
+x = 15
+y = 15

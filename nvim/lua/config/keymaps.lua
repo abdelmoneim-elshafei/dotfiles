@@ -2,12 +2,12 @@ local k = vim.keymap
 --
 --noremap:
 --Explanation: noremap stands for "non-recursive map." When you use noremap in a key mapping command,
---it ensures that the right-hand side of the mapping is not recursively expanded. 
+--it ensures that the right-hand side of the mapping is not recursively expanded.
 --This is often what you want for key mappings to avoid unexpected behavior.
 --
 --silent:
---Explanation: silent suppresses the display of normal mode commands on the command line. 
---It is often used in mappings to prevent the command from being echoed to the command line, 
+--Explanation: silent suppresses the display of normal mode commands on the command line.
+--It is often used in mappings to prevent the command from being echoed to the command line,
 --reducing visual noise.
 --
 local o = { noremap = true, silent = true}

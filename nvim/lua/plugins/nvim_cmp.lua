@@ -1,15 +1,15 @@
 return {
 	"hrsh7th/nvim-cmp",
-    lazy = false,
+  lazy = false,
 	config = function()
+
 		local cmp = require("cmp")
 		local luasnip = require("luasnip")
 		local lspkind = require("lspkind")
-        
+
 		require("luasnip/loaders/from_vscode").lazy_load()
 
 		vim.opt.completeopt = "menu,menuone,noselect"
-    
 
 		cmp.setup({
 			snippet = {
@@ -17,6 +17,7 @@ return {
 					luasnip.lsp_expand(args.body)
 				end,
 			},
+
 			mapping = cmp.mapping.preset.insert({
 				["<C-k>"] = cmp.mapping.select_prev_item(), -- previous suggestion
 				["<C-j>"] = cmp.mapping.select_next_item(), -- next suggestion

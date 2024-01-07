@@ -3,20 +3,19 @@ local o = vim.opt
 -------------- Tabs/Indentations --------------
 --
 --Sets the number of spaces for a Tab key press or Backspace key press.
-o.tabstop = 4
+o.tabstop = 2
 --Sets the number of spaces a tab character represents.
-o.softtabstop = 4
+o.softtabstop = 2
 --Converts tabs to spaces.
 o.expandtab = true
 --Number of spaces for each lever of indentation
-o.shiftwidth = 4
+o.shiftwidth = 2
 --Enables line wrapping.
 o.wrap = true
 --allow for auto indentation
 o.smartindent = true
 
-
--------------- Search --------------
+------------- Search --------------
 --
 --Highlight matches as you type the search pattern.
 o.incsearch = true
@@ -41,15 +40,15 @@ o.showmode = true
 o.cursorline = true
 --allow full colors support in the terminal
 o.termguicolors = true
---highlight a specific column in the text,	
+--highlight a specific column in the text,
 o.colorcolumn = '100'
 --used to control the width of the column reserved for signs
 o.signcolumn = "auto"
 --used to set the number of lines for the command-line area
 o.cmdheight = 1
---it controls the minimum number of screen lines to keep above and below the cursor. 
+--it controls the minimum number of screen lines to keep above and below the cursor.
 o.scrolloff = 10
---used to control the behavior of the completion menu that appears when you use commands like :h, :e, :b, 
+--used to control the behavior of the completion menu that appears when you use commands like :h, :e, :b,
 --    menu: Show a menu even when there's only one match. It provides visual feedback.
 --    menuone: Show a menu even when there's only one match. Useful to see the context.
 --    longest: Automatically select the longest common part of the matches.

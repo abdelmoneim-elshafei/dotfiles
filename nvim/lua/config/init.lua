@@ -10,41 +10,42 @@ if not vim.loop.fs_stat(lazypath) then
     lazypath,
   })
 end
+
 vim.opt.rtp:prepend(lazypath)
 
 require("config.globals")
 require("config.options")
 require("config.keymaps")
 
+
 local opts = {
 
 	defaults = {
-    		lazy = true, -- should plugins be lazy-loaded?
-  	},
-	
+        lazy = true,
+    },
+
 	install = {
-   	 	colorscheme = { "gruvbox-material" },
- 	},
+       colorscheme = { "gruvbox-material" },
+	},
 
 	rtp = {
-    		---@type string[] list any plugins you want to disable here
-      		disabled_plugins = {
-        		 "gzip",
-       			 "matchit",
-       			 "matchparen",
-       			 "netrwPlugin",
-       			 "tarPlugin",
-       			 "tohtml",
-       			 "tutor",
-       			 "zipPlugin",
-      		},
-    	},
 
-	change_detection = {
-   		notify = true, -- get a notification when changes are found
- 	},
+      disabled_plugins = {
+        "gzip",
+        "matchit",
+        "matchparen",
+        "netrwPlugin",
+        "tarPlugin",
+        "tohtml",
+        "tutor",
+        "zipPlugin",
+      },
 
+    },
 
+    change_detection = {
+        notify = true, -- get a notification when changes are found
+    },
 }
 
 require("lazy").setup('plugins', opts)

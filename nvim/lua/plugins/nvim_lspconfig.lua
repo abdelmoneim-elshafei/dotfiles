@@ -12,20 +12,7 @@ local config = function()
 	end
 
 	local capabilities = cmp_nvim_lsp.default_capabilities()
-    --------------------------------------------
-    --
-    --
-    -- local noop = function() end
-    -- require('mason-lspconfig').setup_handlers({
-    --   function(server_name)
-    --     lspconfig[server_name].setup({
-    --       on_attach = on_attach,
-    --       capabilities = capabilities,
-    --     })
-    --   end,
-    --   ['jdtls'] = noop,
-    -- })
-    --------------------------------------------
+
     
 	-- lua
 	lspconfig.lua_ls.setup({
@@ -78,9 +65,11 @@ local config = function()
 		capabilities = capabilities,
 		filetypes = {
 			"typescript",
+            "javascript"
 		},
 		root_dir = lspconfig.util.root_pattern("package.json", "tsconfig.json", ".git"),
 	})
+
 
 	-- bash
 	lspconfig.bashls.setup({
@@ -89,21 +78,37 @@ local config = function()
 		filetypes = { "sh", "aliasrc" },
 	})
 
-	-- solidity
-	lspconfig.solidity.setup({
-		capabilities = capabilities,
-		on_attach = on_attach,
-		filetypes = { "solidity" },
-	})
+    lspconfig.eslint.setup({
+        capabilities = capabilities,
+        on_attach = on_attach,
+        filetypes = {"javascript","typescript","js"},
+        bin = 'eslint', -- or `eslint_d`
+        code_actions = {
+          enable = true,
+          apply_on_save = {
+            enable = true,
+            types = { "directive", "problem", "suggestion", "layout" },
+          },
+          disable_rule_comment = {
+            enable = true,
+            location = "separate_line", -- or `same_line`
+          },
+        },
+        diagnostics = {
+          enable = true,
+          report_unused_disable_directives = false,
+          run_on = "type", -- or `save`
+        },
+    })
 
 	-- typescriptreact, javascriptreact, css, sass, scss, less, svelte, vue
 	lspconfig.emmet_ls.setup({
 		capabilities = capabilities,
 		on_attach = on_attach,
 		filetypes = {
-			"typescriptreact",
+			-- "typescriptreact",
 			"javascriptreact",
-			"javascript",
+			-- "javascript",
 			"css",
 			"sass",
 			"scss",
@@ -133,10 +138,17 @@ local config = function()
     lspconfig.rust_analyzer.setup({
         capabilities = capabilities,
         on_attach = on_attach,
-        cmd = {
-            "cargo"
+        cmd = { "rust-analyzer"},
+
+        filetyp = {"rust"},
+
+        settings = {
+            ['rust_analyzer'] = {
+
+            },
         },
-        filetyp = { "rs", "rust"}
+
+		root_dir = lspconfig.util.root_pattern("Cargo.toml", "Cargo.lock", ".git", "rust-project.json"),
     })
 
 	local luacheck = require("efmls-configs.linters.luacheck")
@@ -146,12 +158,13 @@ local config = function()
 	local eslint_d = require("efmls-configs.linters.eslint_d")
 	local prettier_d = require("efmls-configs.formatters.prettier_d")
 	local fixjson = require("efmls-configs.formatters.fixjson")
-	local shellcheck = require("efmls-configs.linters.shellcheck")
+	-- local shellcheck = require("efmls-configs.linters.shellcheck")
 	local shfmt = require("efmls-configs.formatters.shfmt")
 	local hadolint = require("efmls-configs.linters.hadolint")
-	local solhint = require("efmls-configs.linters.solhint")
+	-- local solhint = require("efmls-configs.linters.solhint")
 	local cpplint = require("efmls-configs.linters.cpplint")
 	local clangformat = require("efmls-configs.formatters.clang_format")
+    -- local rust = require("plugins.rust_tools")
 
 	-- configure efm server
 	lspconfig.efm.setup({
@@ -175,6 +188,7 @@ local config = function()
 			"c",
 			"cpp",
 		},
+
 		init_options = {
 			documentFormatting = true,
 			documentRangeFormatting = true,
@@ -190,7 +204,7 @@ local config = function()
 				typescript = { eslint_d, prettier_d },
 				json = { eslint_d, fixjson },
 				jsonc = { eslint_d, fixjson },
-				sh = { shellcheck, shfmt },
+				sh = { shfmt },
 				javascript = { eslint_d, prettier_d },
 				javascriptreact = { eslint_d, prettier_d },
 				typescriptreact = { eslint_d, prettier_d },
@@ -198,7 +212,6 @@ local config = function()
 				vue = { eslint_d, prettier_d },
 				markdown = { prettier_d },
 				docker = { hadolint, prettier_d },
-				solidity = { solhint },
 				html = { prettier_d },
 				css = { prettier_d },
 				c = { clangformat, cpplint },
